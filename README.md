@@ -27,3 +27,6 @@ jobs:
 ```
 
 On each push, it will now run the scan for secrets
+
+## Reference
+[This action on Github Marketplace](https://github.com/marketplace/actions/govind-secret-finder)
