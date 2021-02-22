@@ -1,10 +1,10 @@
 # Secret Finder
 
-This action finds any merge conflicts in your repository.
+Credit: olivernybroe (used his merge conflict tool as a reference and did this POC)
 
-Sometimes we accidentally resolve merge conflicts without actually resolving it,
-this action simply finds if we have any instances of files with merge conflicts we
-didn't resolve and reports them.
+Please don't use this for your work. It is just a POC
+
+This action finds secrets in your repository.
 
 
 ## How to use it?
@@ -23,37 +23,7 @@ jobs:
       - uses: actions/checkout@v2
       # Run the actual merge conflict finder
       - name: Secret finder
-        uses: govindarajanv/action-conflict-finder@v2.0
+        uses: govindarajanv/secrets-finder@v2.5
 ```
 
-On each push, it will now run the merge conflict finder
-
-### Excludes
-You can add custom excludes to the search through the following inputs:
-
-#### `exclude_dir`
-A comma separate list of directories to ignore. The .git folder is always ignored
-
-#### `excludes`
-A comma separated list of files to ignore. Supports wildcard matching. 
-
-A workflow with the inputs could look like:
-
-```yaml
-on: [push]
-
-jobs:
-  merge_conflict_job:
-    runs-on: ubuntu-latest
-    name: Find merge conflicts
-    steps:
-      # Checkout the source code so we have some files to look at.
-      - uses: actions/checkout@v2
-      # Run the actual merge conflict finder
-      - name: Secret finder
-        uses: govindarajanv/action-conflict-finder@v2.0
-        with:
-          exclude_dir: "path/to/ignore,path/to/ignore2"
-          excludes: "ignore.me,*.zip"
-```
-Credit: olivernybroe
+On each push, it will now run the scan for secrets
