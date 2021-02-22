@@ -1,4 +1,4 @@
-FROM python:3.8
+FROM python:3
 
 RUN apk add bash
 RUN apk add grep
