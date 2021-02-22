@@ -15,15 +15,15 @@ add a `main.yml` file under `.github/workflows` with the following content
 on: [push]
 
 jobs:
-  merge_conflict_job:
+  secret_scan:
     runs-on: ubuntu-latest
-    name: Find merge conflicts
+    name: Find secrets
     steps:
-      # Checkout the source code so we have some files to look at.
-      - uses: actions/checkout@v2
-      # Run the actual merge conflict finder
-      - name: Secret finder
-        uses: govindarajanv/secrets-finder@v2.5
+    # Checkout the source code so we have some files to look at.
+    - uses: actions/checkout@v2
+    # Run the secrets finder
+    - name: secrets finder
+      uses: govindarajanv/secrets-finder@v2.6
 ```
 
 On each push, it will now run the scan for secrets
