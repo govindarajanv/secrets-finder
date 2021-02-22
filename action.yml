@@ -1,0 +1,14 @@
+name: 'Secret Finder'
+description: 'Check if there are any secrets'
+inputs:
+  exclude_dir:
+    description: "Glob of directories to exclude from check"
+    required: false
+    default: 'node_modules,vendor'
+  excludes:
+    description: "Glob of files to exclude from check, supports wildcards"
+    required: false
+    default: ''
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
