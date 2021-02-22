@@ -1,4 +1,4 @@
-# Secret Finder
+# Secrets Finder
 
 Credit: olivernybroe (used his merge conflict tool as a reference and did this POC)
 
