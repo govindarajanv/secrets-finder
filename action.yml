@@ -1,5 +1,8 @@
 name: 'Secret Finder'
 description: 'Check if there are any secrets'
+branding:
+  icon: 'alert-triangle'
+  color: 'red'
 inputs:
   exclude_dir:
     description: "Glob of directories to exclude from check"
@@ -12,3 +15,4 @@ inputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
+alert-triangle
