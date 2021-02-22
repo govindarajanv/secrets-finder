@@ -1,4 +1,4 @@
-FROM alpine:3.12.0
+FROM python:3.8
 
 RUN apk add bash
 RUN apk add grep
